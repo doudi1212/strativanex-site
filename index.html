@@ -85,23 +85,32 @@
     <div class="container nav">
       <div aria-label="StrativaNex logo" role="img">
         <!-- inline SVG logo so it can't break -->
-        <svg width="240" height="56" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(0,8)">
-            <g transform="translate(0,8)" fill="none" stroke="#0B5FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="36,0 66,17 66,51 36,68 6,51 6,17"/>
-              <circle cx="36" cy="0" r="5" fill="#0B5FFF"/>
-              <circle cx="66" cy="17" r="5" fill="#0B5FFF"/>
-              <circle cx="66" cy="51" r="5" fill="#0B5FFF"/>
-              <circle cx="36" cy="68" r="5" fill="#0B5FFF"/>
-              <circle cx="6"  cy="51" r="5" fill="#0B5FFF"/>
-              <circle cx="6"  cy="17" r="5" fill="#0B5FFF"/>
-              <circle cx="36" cy="34" r="5" fill="#0B5FFF"/>
-            </g>
-            <text x="88" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="56" font-weight="800" fill="#0A2540">Strativa</text>
-            <text x="330" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="56" font-weight="800" fill="#0B5FFF">Nex</text>
-            <text x="88" y="100" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="15" font-weight="600" fill="#667085">Data Management • Revenue Operations</text>
-          </g>
-        </svg>
+       <!-- inline SVG logo (one word, bigger) -->
+<svg width="320" height="72" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StrativaNex">
+  <g transform="translate(0,8)">
+    <!-- Hex icon with center dot -->
+    <g transform="translate(0,8)" fill="none" stroke="#0B5FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="36,0 66,17 66,51 36,68 6,51 6,17"/>
+      <circle cx="36" cy="0" r="5" fill="#0B5FFF"/>
+      <circle cx="66" cy="17" r="5" fill="#0B5FFF"/>
+      <circle cx="66" cy="51" r="5" fill="#0B5FFF"/>
+      <circle cx="36" cy="68" r="5" fill="#0B5FFF"/>
+      <circle cx="6"  cy="51" r="5" fill="#0B5FFF"/>
+      <circle cx="6"  cy="17" r="5" fill="#0B5FFF"/>
+      <circle cx="36" cy="34" r="5" fill="#0B5FFF"/>
+    </g>
+
+    <!-- ONE WORD: StrativaNex (two-tone, but no space) -->
+    <text x="88" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="64" font-weight="800" letter-spacing="0.2">
+      <tspan fill="#0A2540">Strativa</tspan><tspan fill="#0B5FFF">Nex</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="88" y="104" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="16" font-weight="600" fill="#667085">
+      Data Management • Revenue Operations
+    </text>
+  </g>
+</svg>
       </div>
       <nav class="links">
         <a href="#services">Services</a>
