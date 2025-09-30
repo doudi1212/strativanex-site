@@ -6,7 +6,20 @@
 <title>StrativaNex — Data Product • Project Delivery • RevOps</title>
 <meta name="description" content="StrativaNex helps teams design, ship, and scale operations and data products in database/cloud environments—clear metrics, predictable delivery, and durable processes." />
 <link rel="icon" href="assets/strativanex-favicon.png" sizes="32x32" />
-<style>
+/* Center the logo in the header */
+.nav { position: relative; min-height: 72px; }         /* gives a stable bar height */
+.brand { 
+  position: absolute; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);                    /* perfect center */
+  display: flex; 
+  align-items: center;
+}
+.brand svg { height: 72px; }                            /* bigger logo; adjust if needed */
+.links { margin-left: auto; display: flex; gap: 18px; } /* keep nav on the right */
+
+  <style>
   :root{
     --brand:#0B5FFF; --navy:#0A2540; --ink:#101828; --muted:#475467;
     --bg:#FFFFFF; --bg-alt:#F5F7FB; --border:#E5E7EB;
