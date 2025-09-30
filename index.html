@@ -4,14 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>StrativaNex — Product • Project Delivery • Revenue Operations</title>
-<meta name="description" content="StrativaNex helps teams design, ship, and scale operations and data products in database/cloud environments—clear metrics, predictable delivery, and durable processes." />
+<meta name="description" content="StrativaNex helps teams design, ship, and scale operations and products in database/cloud environments—clear metrics, predictable delivery, and durable processes." />
 <link rel="icon" href="assets/strativanex-favicon.png" sizes="32x32" />
 <style>
   :root{
     --brand:#0B5FFF; --navy:#0A2540; --ink:#101828; --muted:#475467;
     --bg:#FFFFFF; --bg-alt:#F5F7FB; --border:#E5E7EB;
     --radius:14px; --shadow:0 10px 30px rgba(2,14,34,.08);
-    --menu-w:1fr; /* will be set by JS to mirror menu width */
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
@@ -20,60 +19,47 @@
   a:hover{opacity:.9}
   .container{max-width:1120px;margin:0 auto;padding:0 16px}
 
- <header>
-  <div class="container masthead">
-    <!-- Big left logo -->
-    <a href="#top" class="brand" aria-label="StrativaNex">
-      <!-- Inline SVG logo (bigger) -->
-      <svg width="420" height="96" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg" role="img">
-        <g transform="translate(0,8)">
-          <g transform="translate(0,8)" fill="none" stroke="#0B5FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="36,0 66,17 66,51 36,68 6,51 6,17"/>
-            <circle cx="36" cy="0" r="5" fill="#0B5FFF"/>
-            <circle cx="66" cy="17" r="5" fill="#0B5FFF"/>
-            <circle cx="66" cy="51" r="5" fill="#0B5FFF"/>
-            <circle cx="36" cy="68" r="5" fill="#0B5FFF"/>
-            <circle cx="6"  cy="51" r="5" fill="#0B5FFF"/>
-            <circle cx="6"  cy="17" r="5" fill="#0B5FFF"/>
-            <circle cx="36" cy="34" r="5" fill="#0B5FFF"/>
-          </g>
-          <!-- One word, big -->
-          <text x="88" y="70" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="72" font-weight="800" letter-spacing="0.2">
-            <tspan fill="#0A2540">Strativa</tspan><tspan fill="#0B5FFF">Nex</tspan>
-          </text>
-          <!-- Small subtitle so header stays tidy -->
-          <text x="88" y="108" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="14" font-weight="600" fill="#667085">
-            Data Management • Revenue Operations
-          </text>
-        </g>
-      </svg>
-    </a>
+  /* Header: big logo left, menu right */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .masthead{
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:110px; padding:10px 0;
+  }
+  .brand svg{height:96px; display:block;}
+  .menu{display:flex; align-items:center; gap:32px; white-space:nowrap;}
+  .menu a{color:var(--navy); font-weight:700; font-size:20px;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 20px;
+       border-radius:12px; border:1px solid transparent; font-weight:700; cursor:pointer; transition:.2s; white-space:nowrap;}
+  .btn.primary{background:var(--brand); color:#fff; box-shadow:var(--shadow);}
+  .btn:hover{transform:translateY(-1px);}
 
-    <!-- Right menu (no "Contact" text link) -->
-    <nav class="menu">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#founder">Founder</a>
-      <button class="btn primary" id="openContact">Contact Us</button>
-    </nav>
-  </div>
-</header>
-
-  /* HERO — compact */
+  /* Hero (like your screenshot) */
   .hero{
     background:
-      radial-gradient(800px 320px at 80% -10%, #E8F1FF 0%, transparent 60%),
-      radial-gradient(600px 260px at -10% 10%, #F7FFF8 0%, transparent 60%);
-    padding:40px 0 28px
+      radial-gradient(1100px 420px at 80% -10%, #E8F1FF 0%, transparent 60%),
+      radial-gradient(800px 340px at -10% 10%, #F7FFF8 0%, transparent 60%);
+    padding:56px 0 40px;
   }
-  h1{font-size:40px;line-height:1.15;margin:0 0 10px;color:var(--navy)}
-  .lead{font-size:17px;color:var(--muted);margin:0 0 16px}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
-  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-  .kpi{padding:12px;border:1px solid var(--border);border-radius:12px;background:#fff}
-  .kpi b{display:block;font-size:20px}
+  .eyebrow{display:inline-block;margin-bottom:10px;color:#0B5FFF;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+  h1.hero-title{font-size:56px; line-height:1.05; margin:0 0 14px; color:#0A2540}
+  .hero-lead{font-size:18px;color:#475467;margin:0 0 20px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+  .kpi{background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(2,14,34,.06)}
+  .kpi b{display:block;font-size:22px;margin-bottom:2px;color:#0A2540}
+  .kpi span{color:#475467}
 
-  /* Sections — tighter */
+  .engage{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:20px;box-shadow:0 18px 60px rgba(2,14,34,.10)}
+  .engage h3{margin:0 0 10px;font-size:22px;color:#0A2540}
+  .engage ul{margin:0;padding-left:20px;color:#344054}
+  .engage li{margin:10px 0}
+
+  /* Sections (compact) */
   section{padding:40px 0}
   .section-title{font-size:26px;margin:0 0 8px;color:var(--navy)}
   .section-sub{color:var(--muted);margin:0 0 18px}
@@ -82,68 +68,58 @@
   .service h3{margin:4px 0 6px;font-size:17px}
   .service p{margin:0;color:var(--muted)}
 
-  /* Pills */
+  /* Pills & lists */
   .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
   .pill{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:#475467;background:#fff}
-
-  /* Founder / snapshot cards */
   .stack-8 > * + *{margin-top:8px}
   .list{margin:0;padding-left:18px;color:#475467}
   .list li{margin:6px 0}
 
-  /* Contact section layout */
+  /* Contact section */
   .contact{display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:start}
   .contact-card .row{margin:8px 0}
   .label{color:#667085;font-size:13px;margin-bottom:2px}
 
   /* Modal */
   .modal-overlay{position:fixed;inset:0;background:rgba(2,14,34,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:1000}
-  .modal{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(2,14,34,.30);max-width:520px;width:100%;
-         padding:18px;border:1px solid var(--border)}
+  .modal{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(2,14,34,.30);max-width:520px;width:100%;padding:18px;border:1px solid var(--border)}
   .modal header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
   .close-btn{background:transparent;border:none;font-size:22px;cursor:pointer;line-height:1;color:#475467}
   form label{display:block;font-weight:600;margin:10px 0 6px}
-  input[type="text"], input[type="email"], textarea{
-    width:100%;padding:10px;border:1px solid #D0D5DD;border-radius:10px;font:inherit
-  }
+  input[type="text"], input[type="email"], textarea{width:100%;padding:10px;border:1px solid #D0D5DD;border-radius:10px;font:inherit}
   textarea{min-height:110px}
   .success,.error{display:none;margin-top:10px;padding:10px;border-radius:10px;font-weight:600}
   .success{background:#EFF8FF;border:1px solid #B2DDFF;color:#175CD3}
   .error{background:#FEF3F2;border:1px solid #FDA29B;color:#B42318}
 
   /* Toast */
-  .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#111827;color:#fff;
-         padding:10px 14px;border-radius:10px;box-shadow:0 14px 40px rgba(0,0,0,.25);display:none;z-index:1200}
+  .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 14px 40px rgba(0,0,0,.25);display:none;z-index:1200}
 
   footer{padding:22px 0;border-top:1px solid var(--border);color:#667085;font-size:14px}
 
   /* Responsive */
+  @media (max-width: 1100px){ h1.hero-title{font-size:50px} }
   @media (max-width: 980px){
-    .grid-3,.contact,.hero-grid{grid-template-columns:1fr}
+    .hero{padding:44px 0 32px}
+    .hero-grid,.grid-3,.contact{grid-template-columns:1fr}
     .kpis{grid-template-columns:repeat(2,1fr)}
-    h1{font-size:34px}
   }
   @media (max-width: 760px){
-    .nav{grid-template-columns:1fr;row-gap:8px;justify-items:center;min-height:unset}
+    .masthead{flex-direction:column; gap:8px; min-height:unset}
     .brand svg{height:72px}
-    .links{gap:14px;flex-wrap:wrap;justify-content:center}
-    .links a{font-size:18px}
-    .btn.primary{font-size:15px}
+    .menu{gap:14px; flex-wrap:wrap; justify-content:center}
+    .menu a{font-size:18px}
   }
-  @media (max-width: 560px){ .kpis{grid-template-columns:1fr} }
+  @media (max-width: 560px){ h1.hero-title{font-size:38px} .kpis{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="container nav">
-      <!-- left pad mirrors menu width (set by JS) -->
-      <div class="pad" aria-hidden="true"></div>
-
-      <!-- centered brand -->
-      <div class="brand" aria-label="StrativaNex logo" role="img">
-        <!-- inline SVG logo -->
-        <svg width="360" height="84" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg">
+    <div class="container masthead">
+      <!-- Big left logo (inline SVG) -->
+      <a href="#top" class="brand" aria-label="StrativaNex">
+        <svg width="420" height="96" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg" role="img">
           <g transform="translate(0,8)">
             <g transform="translate(0,8)" fill="none" stroke="#0B5FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="36,0 66,17 66,51 36,68 6,51 6,17"/>
@@ -152,18 +128,18 @@
               <circle cx="6"  cy="51" r="5" fill="#0B5FFF"/><circle cx="6"  cy="17" r="5" fill="#0B5FFF"/>
               <circle cx="36" cy="34" r="5" fill="#0B5FFF"/>
             </g>
-            <text x="88" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="66" font-weight="800" letter-spacing="0.2">
+            <text x="88" y="70" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="72" font-weight="800" letter-spacing="0.2">
               <tspan fill="#0A2540">Strativa</tspan><tspan fill="#0B5FFF">Nex</tspan>
             </text>
-            <text x="88" y="104" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="15" font-weight="600" fill="#667085">
+            <text x="88" y="108" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="14" font-weight="600" fill="#667085">
               Data Management • Revenue Operations
             </text>
           </g>
         </svg>
-      </div>
+      </a>
 
-      <!-- right menu -->
-      <nav class="links">
+      <!-- Right menu (no "Contact" link) -->
+      <nav class="menu">
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
         <a href="#founder">Founder</a>
@@ -173,29 +149,32 @@
   </header>
 
   <main>
-    <!-- Hero (no CTA/badge here) -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>Product • Project Delivery • Revenue Operations</h1>
-          <p class="lead">We help teams design, ship, and scale operations and products in <b>database/cloud</b> environments. Clear metrics, predictable delivery, durable processes.</p>
+          <span class="eyebrow">Consulting &amp; Delivery</span>
+          <h1 class="hero-title">Product • Project Delivery • Revenue Operations</h1>
+          <p class="hero-lead">
+            StrativaNex helps teams design, ship, and scale operations and products in
+            <b>database/cloud</b> environments. We focus on clear metrics, predictable delivery, and durable processes.
+          </p>
           <div class="kpis">
-            <div class="kpi"><b>20%+</b>Cycle-time reduction</div>
-            <div class="kpi"><b>3–5×</b>Faster time-to-insight</div>
-            <div class="kpi"><b>95–100%</b>On-time delivery</div>
+            <div class="kpi"><b>20%+</b><span>Cycle-time reduction</span></div>
+            <div class="kpi"><b>3–5×</b><span>Faster time-to-insight</span></div>
+            <div class="kpi"><b>95–100%</b><span>On-time delivery</span></div>
           </div>
         </div>
 
-        <!-- Engagement focus card -->
-        <div class="card">
-          <h3 class="section-title" style="margin:0 0 6px">Engagement focus</h3>
-          <ul class="list">
-            <li>Define & steward <b>products</b> (vision, metrics, backlog, adoption)</li>
+        <aside class="engage">
+          <h3>Engagement focus</h3>
+          <ul>
+            <li>Define &amp; steward <b>products</b> (vision, metrics, backlog, adoption)</li>
             <li>Deliver <b>projects/programs</b> with visible cadences (Scrumban, PMO-light)</li>
             <li>Strengthen <b>revenue operations</b> (process mapping, forecasting, reporting)</li>
             <li>Operate across <b>database/cloud</b> platforms with vendor-neutral patterns</li>
           </ul>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -210,7 +189,7 @@
             <p>Define vision and success metrics, shape backlogs, align stakeholders, and drive adoption with measurable value.</p>
           </div>
           <div class="card service">
-            <h3>Project & Program Delivery</h3>
+            <h3>Project &amp; Program Delivery</h3>
             <p>Light PMO: cadence, capacity and risk tracking, RAID, vendor coordination, and executive comms that keep delivery predictable.</p>
           </div>
           <div class="card service">
@@ -225,7 +204,7 @@
     <section id="why" style="background:var(--bg-alt)">
       <div class="container">
         <h2 class="section-title">Why StrativaNex</h2>
-        <p class="section-sub">We bridge data, delivery, and operations—so you don’t juggle multiple vendors.</p>
+        <p class="section-sub">We bridge product, delivery, and operations—so you don’t juggle multiple vendors.</p>
         <div class="grid-3">
           <div class="card"><b>Hands-on</b><br />Strategy paired with in-tool execution and documentation your teams keep.</div>
           <div class="card"><b>Predictable</b><br />Cadences, WIP limits, and transparent status—no surprises.</div>
@@ -239,9 +218,9 @@
       <div class="container stack-8">
         <div class="card">
           <h2 class="section-title" style="margin:0 0 6px">About the founder</h2>
-          <p>Operator and data product leader with international, remote experience. Background spans Revenue Operations, Business Operations, and Data Product Management. Focused on pragmatic delivery, transparency, and measurable outcomes.</p>
+          <p>Operator and product leader with international, remote experience. Background spans Revenue Operations, Business Operations, and Product Management. Focused on pragmatic delivery, transparency, and measurable outcomes.</p>
           <div class="pills">
-            <span class="pill">roduct</span>
+            <span class="pill">Product</span>
             <span class="pill">Project/Program</span>
             <span class="pill">Revenue Operations</span>
             <span class="pill">Database/Cloud</span>
@@ -324,17 +303,6 @@
   <div id="toast" class="toast">Thanks — we got your request.</div>
 
 <script>
-  /* Mirror the menu width to the left pad so the brand is truly centered */
-  (function(){
-    const links = document.querySelector('.links');
-    function syncMenuWidth(){
-      document.documentElement.style.setProperty('--menu-w', links.offsetWidth + 'px');
-    }
-    window.addEventListener('load', syncMenuWidth);
-    let t;
-    window.addEventListener('resize', ()=>{ clearTimeout(t); t = setTimeout(syncMenuWidth, 120); });
-  })();
-
   // Open/close modal
   const modal = document.getElementById('contactModal');
   ['openContact','openContactBottom'].forEach(id=>{
