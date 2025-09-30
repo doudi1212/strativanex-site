@@ -57,3 +57,239 @@
   /* Modal (stacked form) */
   .modal-overlay{position:fixed;inset:0;background:rgba(2,14,34,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
   .modal{background:#fff;border-radius:18px;box-shadow:0 22px 70px rgba(2,14,34,.30);max-width:520px;width:100%;
+         padding:22px;border:1px solid var(--border)}
+  .modal header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .close-btn{background:transparent;border:none;font-size:22px;cursor:pointer;line-height:1;color:#475467}
+  form label{display:block;font-weight:600;margin:12px 0 6px}
+  input[type="text"], input[type="tel"], input[type="email"], textarea{
+    width:100%;padding:12px;border:1px solid #D0D5DD;border-radius:12px;font:inherit
+  }
+  textarea{min-height:120px}
+  .success{display:none;margin-top:12px;padding:10px;border-radius:10px;background:#EFF8FF;border:1px solid #B2DDFF;color:#175CD3;font-weight:600}
+  .error{display:none;margin-top:12px;padding:10px;border-radius:10px;background:#FEF3F2;border:1px solid #FDA29B;color:#B42318;font-weight:600}
+
+  /* Toast */
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111827;color:#fff;
+         padding:12px 16px;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.25);display:none;z-index:1200}
+
+  footer{padding:28px 0;border-top:1px solid var(--border);color:#667085;font-size:14px}
+
+  /* Responsive */
+  @media (max-width: 980px){ .grid-3,.contact{grid-template-columns:1fr} .kpis{grid-template-columns:repeat(2,1fr)} h1{font-size:36px} }
+  @media (max-width: 560px){ .kpis{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div aria-label="StrativaNex logo" role="img">
+        <!-- inline SVG logo so it can't break -->
+        <svg width="240" height="56" viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,8)">
+            <g transform="translate(0,8)" fill="none" stroke="#0B5FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="36,0 66,17 66,51 36,68 6,51 6,17"/>
+              <circle cx="36" cy="0" r="5" fill="#0B5FFF"/>
+              <circle cx="66" cy="17" r="5" fill="#0B5FFF"/>
+              <circle cx="66" cy="51" r="5" fill="#0B5FFF"/>
+              <circle cx="36" cy="68" r="5" fill="#0B5FFF"/>
+              <circle cx="6"  cy="51" r="5" fill="#0B5FFF"/>
+              <circle cx="6"  cy="17" r="5" fill="#0B5FFF"/>
+              <circle cx="36" cy="34" r="5" fill="#0B5FFF"/>
+            </g>
+            <text x="88" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="56" font-weight="800" fill="#0A2540">Strativa</text>
+            <text x="330" y="66" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="56" font-weight="800" fill="#0B5FFF">Nex</text>
+            <text x="88" y="100" font-family="Inter,Segoe UI,Arial,Helvetica,sans-serif" font-size="15" font-weight="600" fill="#667085">Data Management • Revenue Operations</text>
+          </g>
+        </svg>
+      </div>
+      <nav class="links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+        <button class="btn primary" id="openContact">Contact Us</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Data Product • Project Delivery • RevOps</h1>
+        <p class="lead">We help teams design, ship, and scale operations and data products in <b>database/cloud</b> environments. Clear metrics, predictable delivery, durable processes.</p>
+        <div class="kpis">
+          <div class="kpi"><b>20%+</b>Cycle-time reduction</div>
+          <div class="kpi"><b>3–5×</b>Faster time-to-insight</div>
+          <div class="kpi"><b>95–100%</b>On-time delivery</div>
+        </div>
+        <div style="margin-top:18px">
+          <button class="btn primary" id="openContactHero">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">Discovery sprint first; then 2–4 week cycles with visible outcomes.</p>
+        <div class="grid-3">
+          <div class="card service">
+            <h3>Data Product Management</h3>
+            <p>Define vision and success metrics, shape backlogs, align stakeholders, and drive adoption with measurable value.</p>
+          </div>
+          <div class="card service">
+            <h3>Project / Program Delivery</h3>
+            <p>Light PMO: cadence, capacity, RAID, vendor coordination, and executive comms that keep delivery predictable.</p>
+          </div>
+          <div class="card service">
+            <h3>Revenue Operations</h3>
+            <p>Map processes, improve hand-offs, standardize forecasting, and build trustworthy performance reporting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section id="why" style="background:var(--bg-alt)">
+      <div class="container">
+        <h2 class="section-title">Why StrativaNex</h2>
+        <p class="section-sub">We bridge data, delivery, and operations—so you don’t juggle multiple vendors.</p>
+        <div class="grid-3">
+          <div class="card"><b>Hands-on</b><br />Strategy paired with in-tool execution and documentation your teams keep.</div>
+          <div class="card"><b>Predictable</b><br />Cadences, WIP limits, and transparent status—no surprises.</div>
+          <div class="card"><b>Platform-agnostic</b><br />Vendor-neutral patterns across database/cloud stacks.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section id="founder">
+      <div class="container">
+        <h2 class="section-title">About the founder</h2>
+        <div class="card">
+          Operator and data product leader with international, remote experience across Revenue Ops, Business Ops, and Data Product Management. Fluent in English and Greek. Focused on pragmatic delivery, transparency, and measurable outcomes.
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container contact">
+        <!-- Company card -->
+        <div class="card contact-card">
+          <h3 class="section-title" style="margin:0 0 10px">Company</h3>
+          <div class="row">
+            <div class="label">Name</div>
+            <div>StrativaNex LLC</div>
+          </div>
+          <div class="row">
+            <div class="label">Address</div>
+            <div>75 E 3rd St<br/>Sheridan, WY 82801</div>
+          </div>
+          <div class="row">
+            <div class="label">Email</div>
+            <div><a href="mailto:info@strativanex.com">info@strativanex.com</a></div>
+          </div>
+        </div>
+
+        <!-- CTA card -->
+        <div class="card">
+          <h3 class="section-title" style="margin:0 0 10px">Work with us</h3>
+          <p class="section-sub" style="margin:0 0 18px">Tell us what you need. We’ll reply within 1–2 business days.</p>
+          <button class="btn primary" id="openContactBottom" style="width:100%">Contact Us</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 StrativaNex — All rights reserved.</div>
+  </footer>
+
+  <!-- Modal Form -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+      <header>
+        <h3 id="contactTitle" style="margin:0">Contact Us</h3>
+        <button class="close-btn" id="closeContact" aria-label="Close">×</button>
+      </header>
+      <p style="color:#475467;margin-top:0">Leave your details and we’ll call you back.</p>
+
+      <!-- IMPORTANT: email field name MUST be 'email' for autoresponse -->
+      <form id="contactForm" method="POST" action="https://formsubmit.co/info@strativanex.com">
+        <input type="hidden" name="_subject" value="Website contact request" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_autoresponse" value="Thanks for contacting StrativaNex. We received your message and will respond within 1–2 business days." />
+        <input type="text" name="_honey" style="display:none" />
+
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="Name" required />
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="Phone" placeholder="+1 ..." />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="Notes" placeholder="What would you like help with?"></textarea>
+
+        <div style="margin-top:16px"><button type="submit" class="btn primary" style="width:100%">Submit</button></div>
+        <div class="success" id="successMsg">Thanks — your request was sent. We’ll reply shortly.</div>
+        <div class="error" id="errorMsg">Hmm, something went wrong. Please email <a href="mailto:info@strativanex.com">info@strativanex.com</a>.</div>
+      </form>
+
+      <p class="mini" style="margin-top:10px">We’ll respond within 1–2 business days.</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Thanks — we got your request.</div>
+
+<script>
+  // Open/close modal
+  const modal = document.getElementById('contactModal');
+  ['openContact','openContactHero','openContactBottom'].forEach(id=>{
+    const b=document.getElementById(id);
+    if(b) b.addEventListener('click',()=>{ modal.style.display='flex'; modal.setAttribute('aria-hidden','false'); });
+  });
+  document.getElementById('closeContact').addEventListener('click',()=>{ closeModal(); });
+  modal.addEventListener('click',(e)=>{ if(e.target===modal){ closeModal(); } });
+  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && modal.getAttribute('aria-hidden')==='false'){ closeModal(); } });
+
+  function closeModal(){
+    modal.style.display='none';
+    modal.setAttribute('aria-hidden','true');
+  }
+  function showToast(msg){
+    const t=document.getElementById('toast');
+    t.textContent=msg||'Thanks — we got your request.';
+    t.style.display='block';
+    setTimeout(()=>{ t.style.display='none'; }, 3500);
+  }
+
+  // AJAX submit → send, then close modal & toast; FormSubmit auto-replies to the visitor
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    successMsg.style.display='none'; errorMsg.style.display='none';
+    try{
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method:'POST', body:data, headers: { 'Accept':'application/json' } });
+      if(res.ok){
+        form.reset();
+        closeModal();
+        showToast('Thanks — we’ll reply within 1–2 business days.');
+      }else{
+        errorMsg.style.display='block';
+      }
+    }catch(err){ errorMsg.style.display='block'; }
+  });
+</script>
+</body>
+</html>
